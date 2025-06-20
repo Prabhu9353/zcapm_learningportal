@@ -1,0 +1,172 @@
+@server=http://localhost:4004
+@username=alice
+@password=
+
+
+### MentorSet
+# @name MentorSet_GET
+GET {{server}}/odata/v4/laerning-portal/MentorSet
+Authorization: Basic {{username}}:{{password}}
+
+
+### MentorSet
+# @name MentorSet_POST
+POST {{server}}/odata/v4/laerning-portal/MentorSet
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": "239460bf-d002-498b-ba9f-42c2dfcd0a87",
+  "Name": "Name-239460",
+  "EmailId": "raju123@gmai.com",
+  "PhoneNo": "0987654321"
+}
+
+
+### MentorSet
+# @name MentorSet_PATCH
+PATCH {{server}}/odata/v4/laerning-portal/MentorSet/239460bf-d002-498b-ba9f-42c2dfcd0a87
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": "239460bf-d002-498b-ba9f-42c2dfcd0a87",
+  "Name": "Name-239460",
+  "EmailId": "EmailId-239460",
+  "PhoneNo": "eNo-239460"
+}
+
+
+### MentorSet
+# @name MentorSet_DELETE
+DELETE {{server}}/odata/v4/laerning-portal/MentorSet/239460bf-d002-498b-ba9f-42c2dfcd0a87
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+
+### CourseSet
+# @name CourseSet_GET
+GET {{server}}/odata/v4/laerning-portal/CourseSet?$expand=Trainees
+Authorization: Basic {{username}}:{{password}}
+
+
+### CourseSet
+# @name CourseSet_POST
+POST {{server}}/odata/v4/laerning-portal/CourseSet
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": "3960100a-b94e-4f8e-bd47-d7761bbb19e2",
+  "Title": "Title-3960100",
+  "Description": "Description-3960100",
+  "StartDate": "2023-12-18",
+  "DndDate": "2005-12-11",
+  "Trainees": [
+    {
+      "ID": "92303715-42c8-497e-9210-97208b9208cb",
+      "Name": "Name-9230371",
+      "Age": "Age-9230371",
+      "EmailId": "EmailId-9230371",
+      "trainee": {
+        "ID": "239460bf-d002-498b-ba9f-42c2dfcd0a87"
+      }
+    },
+    {
+      "ID": "92303723-4784-4e9a-b896-c5750a82740c",
+      "Name": "Name-9230372",
+      "Age": "Age-9230372",
+      "EmailId": "EmailId-9230372",
+      "trainee": {
+        "ID": "239460bf-d002-498b-ba9f-42c2dfcd0a87"
+      }
+    }
+  ]
+}
+
+
+### CourseSet
+# @name CourseSet_PATCH
+PATCH {{server}}/odata/v4/laerning-portal/CourseSet/3960100a-b94e-4f8e-bd47-d7761bbb19e2
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": "3960100a-b94e-4f8e-bd47-d7761bbb19e2",
+  "Title": "Title-3960100",
+  "Description": "Description-3960100",
+  "StartDate": "2023-12-18",
+  "DndDate": "2005-12-11",
+  "Trainees": [
+    {
+      "ID": "92303715-42c8-497e-9210-97208b9208cb",
+      "Name": "Name-9230371",
+      "Age": "Age-9230371",
+      "EmailId": "EmailId-9230371",
+      "trainee": {
+        "ID": "239460bf-d002-498b-ba9f-42c2dfcd0a87"
+      }
+    },
+    {
+      "ID": "92303723-4784-4e9a-b896-c5750a82740c",
+      "Name": "Name-9230372",
+      "Age": "Age-9230372",
+      "EmailId": "EmailId-9230372",
+      "trainee": {
+        "ID": "239460bf-d002-498b-ba9f-42c2dfcd0a87"
+      }
+    }
+  ]
+}
+
+
+### CourseSet
+# @name CourseSet_DELETE
+DELETE {{server}}/odata/v4/laerning-portal/CourseSet/3960100a-b94e-4f8e-bd47-d7761bbb19e2
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+
+### TraineeSet
+# @name TraineeSet_GET
+GET {{server}}/odata/v4/laerning-portal/TraineeSet
+Authorization: Basic {{username}}:{{password}}
+
+
+### TraineeSet
+# @name TraineeSet_POST
+POST {{server}}/odata/v4/laerning-portal/TraineeSet
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+ {
+      "ID": "3",
+      "Name": "Rani",
+      "Age": "25",
+      "EmailId": "Rani@gmail.com",
+      "course_ID": "1",
+      "trainee_ID": "1"
+    }
+
+### TraineeSet
+# @name TraineeSet_PATCH
+PATCH {{server}}/odata/v4/laerning-portal/TraineeSet/92303715-42c8-497e-9210-97208b9208cb
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": "92303715-42c8-497e-9210-97208b9208cb",
+  "Name": "Name-9230371",
+  "Age": "Age-9230371",
+  "EmailId": "EmailId-9230371",
+  "trainee": {
+    "ID": "239460bf-d002-498b-ba9f-42c2dfcd0a87"
+  }
+}
+
+
+### TraineeSet
+# @name TraineeSet_DELETE
+DELETE {{server}}/odata/v4/laerning-portal/TraineeSet/92303715-42c8-497e-9210-97208b9208cb
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
