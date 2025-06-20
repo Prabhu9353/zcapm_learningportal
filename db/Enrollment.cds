@@ -7,6 +7,7 @@ entity Mentor : cuid{
     Name    : String(40) @mandatory;
     EmailId : String(40) @assert.format : '[a-zA-Z0-9]+[a-zA-Z0-9.%\-\+]*@(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]';
     PhoneNo : String(10) @assert.format:'[0-9]';
+    Address : String(40);
 }
 
 entity Course : cuid{
